@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://beha0ok3jslxa"]
+
+[ext_resource type="Script" path="res://script/bombe_ramassable.gd" id="1_edvvk"]
+[ext_resource type="Texture2D" uid="uid://ffuxwngsdlgb" path="res://assets/sprites/bomb.png" id="1_ssn5a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_804ta"]
+radius = 6.0
+
+[node name="bombe_ramassable" type="Area2D"]
+collision_layer = 32
+script = ExtResource("1_edvvk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ssn5a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_804ta")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

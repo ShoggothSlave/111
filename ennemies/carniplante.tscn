@@ -1,0 +1,117 @@
+[gd_scene load_steps=14 format=3 uid="uid://d3yr44bhyudey"]
+
+[ext_resource type="Texture2D" uid="uid://k27e3354xnk8" path="res://assets/sheet/Carniplant.png" id="1_c6ai8"]
+[ext_resource type="Script" path="res://script/carniplante.gd" id="1_pt5p2"]
+[ext_resource type="Texture2D" uid="uid://bw2uxj0theacl" path="res://assets/sheet/Carniplant_dead_spritesheet.png" id="2_0ehu8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6esi"]
+atlas = ExtResource("2_0ehu8")
+region = Rect2(21, 0, 21, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1gl2"]
+atlas = ExtResource("2_0ehu8")
+region = Rect2(42, 0, 21, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jd38f"]
+atlas = ExtResource("2_0ehu8")
+region = Rect2(63, 0, 21, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nff11"]
+atlas = ExtResource("2_0ehu8")
+region = Rect2(84, 0, 21, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1e44"]
+atlas = ExtResource("1_c6ai8")
+region = Rect2(0, 0, 21, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htfnt"]
+atlas = ExtResource("1_c6ai8")
+region = Rect2(21, 0, 21, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0pl22"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6esi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1gl2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jd38f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nff11")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1e44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htfnt")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gqbay"]
+height = 28.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6pdj"]
+size = Vector2(7, 6)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p1bti"]
+radius = 9.0
+
+[node name="carniplante" type="CharacterBody2D" groups=["ennemies"]]
+collision_layer = 16
+collision_mask = 5
+script = ExtResource("1_pt5p2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 4
+position = Vector2(-0.125, -2)
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_0pl22")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.10543e-15, 0)
+scale = Vector2(0.75, 0.75)
+shape = SubResource("CapsuleShape2D_gqbay")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="stompable" type="Area2D" parent="."]
+collision_layer = 16
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stompable"]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_q6pdj")
+
+[node name="killzone" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+position = Vector2(0, 2)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_p1bti")
+
+[node name="death_timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="stompable" to="." method="_on_stompable_body_entered"]
+[connection signal="body_entered" from="killzone" to="." method="_on_killzone_body_entered"]
+[connection signal="timeout" from="death_timer" to="." method="_on_death_timer_timeout"]

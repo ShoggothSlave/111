@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://cbh3enxbf3hj3"]
+
+[ext_resource type="Texture2D" uid="uid://0yqe20foqecv" path="res://assets/sheet/grand_sapin2_spritesheet.png" id="1_ty1gg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hcet"]
+atlas = ExtResource("1_ty1gg")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyf5q"]
+atlas = ExtResource("1_ty1gg")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lvvs"]
+atlas = ExtResource("1_ty1gg")
+region = Rect2(0, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tompt"]
+atlas = ExtResource("1_ty1gg")
+region = Rect2(32, 64, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qeveb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hcet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyf5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lvvs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tompt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="grand_sapin" type="AnimatedSprite2D"]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_qeveb")
+autoplay = "default"
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]

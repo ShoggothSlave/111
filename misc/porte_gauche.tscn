@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://d0cf00qcf6ktt"]
+
+[ext_resource type="Script" path="res://script/porte_gauche.gd" id="1_g256v"]
+[ext_resource type="Texture2D" uid="uid://bhb311cu6jaos" path="res://assets/sheet/woodhouse_spritesheet.png" id="1_os865"]
+[ext_resource type="AudioStream" uid="uid://dclwa5qnanmjx" path="res://sons/dooropened-103851.wav" id="3_p0rqr"]
+[ext_resource type="AudioStream" uid="uid://clgfapceciq65" path="res://sons/wooden-door-slamming-close-79934.wav" id="4_373ja"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5iemv"]
+size = Vector2(72.8266, 72.8266)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e36fy"]
+size = Vector2(3.84615, 30.7692)
+
+[node name="porte_gauche" type="Area2D" groups=["interactable"]]
+z_index = 2
+position = Vector2(-1.90735e-06, -1)
+scale = Vector2(0.65, 0.65)
+collision_layer = 128
+script = ExtResource("1_g256v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.33786e-06, 1.45802e-06)
+scale = Vector2(0.4225, 0.4225)
+shape = SubResource("RectangleShape2D_5iemv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(7.69231, 1.46719e-06)
+texture = ExtResource("1_os865")
+flip_h = true
+hframes = 10
+vframes = 2
+frame = 4
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="audio_open" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_p0rqr")
+
+[node name="audio_close" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_373ja")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 14
+collision_mask = 81
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2.86102e-06, 1.46719e-06)
+shape = SubResource("RectangleShape2D_e36fy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

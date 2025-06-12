@@ -1,0 +1,98 @@
+[gd_scene load_steps=11 format=3 uid="uid://vdwyrf46kh43"]
+
+[ext_resource type="Script" path="res://script/porc_epic.gd" id="1_0u5y2"]
+[ext_resource type="Texture2D" uid="uid://b7d1lwmxal1pl" path="res://assets/sheet/porcepic_spritesheet.png" id="1_ud47u"]
+[ext_resource type="AudioStream" uid="uid://ddo11a57ylenv" path="res://sons/party-horn-68443.wav" id="3_leupd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5q8r4"]
+atlas = ExtResource("1_ud47u")
+region = Rect2(0, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkllw"]
+atlas = ExtResource("1_ud47u")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqvao"]
+atlas = ExtResource("1_ud47u")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1q7qe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5q8r4")
+}],
+"loop": true,
+"name": &"mort",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkllw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqvao")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yqxbo"]
+radius = 6.0
+height = 26.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fhw5x"]
+radius = 9.0
+height = 36.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k2f5n"]
+radius = 6.0
+
+[node name="porc_epic" type="CharacterBody2D"]
+z_index = 4
+collision_layer = 16
+collision_mask = 4
+script = ExtResource("1_0u5y2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1q7qe")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_yqxbo")
+
+[node name="killzone" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+position = Vector2(1, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_fhw5x")
+
+[node name="kickzone" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kickzone"]
+position = Vector2(-15, 3)
+shape = SubResource("CircleShape2D_k2f5n")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="death_timer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_leupd")
+
+[connection signal="body_entered" from="killzone" to="." method="_on_killzone_body_entered"]
+[connection signal="body_entered" from="kickzone" to="." method="_on_kickzone_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="death_timer" to="." method="_on_death_timer_timeout"]

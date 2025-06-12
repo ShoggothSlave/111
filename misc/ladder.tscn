@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://bspjk686rmrdt"]
+
+[ext_resource type="Texture2D" uid="uid://bhb311cu6jaos" path="res://assets/sheet/woodhouse_spritesheet.png" id="1_ibwvj"]
+[ext_resource type="Script" path="res://script/ladder.gd" id="1_luyi0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndsg5"]
+size = Vector2(14, 46.1538)
+
+[node name="ladder4" type="Area2D" groups=["climbable_face"]]
+z_index = 3
+scale = Vector2(0.65, 0.65)
+script = ExtResource("1_luyi0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+texture = ExtResource("1_ibwvj")
+hframes = 10
+vframes = 4
+frame = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["climbable_face"]]
+z_index = -1
+position = Vector2(0, -7.33596e-07)
+shape = SubResource("RectangleShape2D_ndsg5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(3.8147e-06, 15.3846)
+texture = ExtResource("1_ibwvj")
+hframes = 10
+vframes = 4
+frame = 12
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(0, -15.3846)
+texture = ExtResource("1_ibwvj")
+hframes = 10
+vframes = 4
+frame = 11
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

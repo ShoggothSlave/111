@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://cgt3hv0it3eq8"]
+
+[ext_resource type="Script" path="res://script/spin_jump_bloc.gd" id="1_wotx8"]
+[ext_resource type="Texture2D" uid="uid://l3nkrjbl4sp5" path="res://assets/sheet/spin_jump_bloc_spritesheet.png" id="2_fh67g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u046i"]
+size = Vector2(10, 10)
+
+[sub_resource type="Animation" id="Animation_flmh6"]
+resource_name = "spin"
+length = 0.575
+loop_mode = 1
+step = 0.075
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.075, 0.15, 0.225, 0.3, 0.375, 0.45, 0.525),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_njtxf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c0qkw"]
+_data = {
+"RESET": SubResource("Animation_njtxf"),
+"spin": SubResource("Animation_flmh6")
+}
+
+[node name="spin_jump_bloc" type="Area2D"]
+z_index = 3
+collision_layer = 14
+script = ExtResource("1_wotx8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_u046i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.345, 0.345)
+texture = ExtResource("2_fh67g")
+hframes = 4
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_c0qkw")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

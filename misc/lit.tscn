@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bapywyffr2smu"]
+
+[ext_resource type="Script" path="res://script/lit.gd" id="1_2h0oc"]
+[ext_resource type="Texture2D" uid="uid://dj66a0g5gbjbg" path="res://assets/sprites/lit.png" id="2_7qy61"]
+[ext_resource type="AudioStream" uid="uid://2aacfxqmyo8w" path="res://sons/music/berceuse.wav" id="3_p3qrm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f74bt"]
+size = Vector2(46.1539, 12.3077)
+
+[node name="lit" type="Area2D"]
+z_index = 1
+scale = Vector2(0.65, 0.65)
+collision_layer = 2
+script = ExtResource("1_2h0oc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_7qy61")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7.33596e-07, 1.53846)
+shape = SubResource("RectangleShape2D_f74bt")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 300.0
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_p3qrm")
+
+[node name="music_timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="music_timer" to="." method="_on_music_timer_timeout"]

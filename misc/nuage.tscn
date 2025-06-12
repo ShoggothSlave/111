@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://de6r5jbkfj3ac"]
+
+[ext_resource type="Texture2D" uid="uid://dxo73i12w3cdy" path="res://assets/sprites/nuage.png" id="1_4e68a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u7fj8"]
+size = Vector2(32, 10)
+
+[node name="nuage" type="StaticBody2D"]
+z_index = 3
+collision_layer = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 3
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("1_4e68a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 3
+shape = SubResource("RectangleShape2D_u7fj8")
+one_way_collision = true

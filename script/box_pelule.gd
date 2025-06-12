@@ -1,0 +1,39 @@
+extends Node2D
+
+var kickable_left = false
+var kickable_right = false
+var vide = false
+
+func _on_area_box_pelule_body_entered(_body: Node2D) -> void:
+	if vide == false:
+		if _body is player:
+			$AnimationPlayer.play("pop_up")
+			vide = true
+
+func _on_area_frappe_pelule_left_body_entered(_body: Node2D) -> void:
+	if vide == false:
+		if _body is player:
+			kickable_left = true
+
+func _on_area_frappe_pelule_left_body_exited(_body: Node2D) -> void:
+	kickable_left = false
+
+func _on_area_frappe_pelule_right_body_entered(_body: Node2D) -> void:
+	if vide == false:
+		if _body is player:
+			kickable_right = true
+
+func _on_area_frappe_pelule_right_body_exited(_body: Node2D) -> void:
+	kickable_right = false
+
+func _process(_delta: float) -> void:
+	if kickable_left == true and Input.is_action_just_pressed("kick"):
+		$AnimationPlayer.play("pop_left")
+		kickable_left = false
+		kickable_right = false
+		vide = true
+	if kickable_right == true and Input.is_action_just_pressed("kick"):
+		$AnimationPlayer.play("pop_right")
+		kickable_left = false
+		kickable_right = false
+		vide = true

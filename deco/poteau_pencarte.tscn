@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6q0m5spdmmkh"]
+
+[ext_resource type="Texture2D" uid="uid://bjepf2s4is5i0" path="res://assets/sprites/poteau_pencarte.png" id="1_cdcp5"]
+
+[node name="poteau_pencarte" type="Sprite2D"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_cdcp5")

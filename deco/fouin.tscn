@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bu83d75rtabua"]
+
+[ext_resource type="Texture2D" uid="uid://dbkqr0f3bb8ex" path="res://assets/sprites/fouin.png" id="1_u3blo"]
+
+[node name="fouin" type="Sprite2D"]
+texture = ExtResource("1_u3blo")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
