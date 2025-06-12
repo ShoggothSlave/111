@@ -115,4 +115,5 @@ func _on_stompzone_body_entered(_body: Node2D) -> void:
 			queue_free()
 
 func _kill():
+	ManagerPlayer.points = ManagerPlayer.points + 200
 	queue_free()

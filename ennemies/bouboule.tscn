@@ -484,7 +484,7 @@ radius = 5.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_88aas"]
 radius = 3.16228
 
-[node name="bouboule" type="CharacterBody2D"]
+[node name="bouboule" type="CharacterBody2D" groups=["ennemies"]]
 z_index = 4
 scale = Vector2(1.25, 1.25)
 collision_layer = 16

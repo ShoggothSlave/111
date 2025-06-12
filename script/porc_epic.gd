@@ -64,4 +64,5 @@ func _on_kickzone_body_entered(_body: Node2D) -> void:
 		porc_epic_sprite.play("mort")
 
 func _kill():
+	ManagerPlayer.points = ManagerPlayer.points + 100
 	queue_free()

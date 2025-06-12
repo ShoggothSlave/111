@@ -70,4 +70,5 @@ func _on_death_timer_timeout() -> void:
 	queue_free()
 
 func _kill():
+	ManagerPlayer.points = ManagerPlayer.points + 100
 	queue_free()
