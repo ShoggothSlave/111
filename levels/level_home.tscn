@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=4 uid="uid://br35e4vneusx3"]
+[gd_scene load_steps=66 format=4 uid="uid://br35e4vneusx3"]
 
 [ext_resource type="Script" path="res://script/level_1_intro.gd" id="1_sklvn"]
 [ext_resource type="PackedScene" uid="uid://wqduhsfmr6q4" path="res://player/player.tscn" id="2_ujk4r"]
@@ -34,7 +34,6 @@
 [ext_resource type="PackedScene" uid="uid://c1vlw4282ipn" path="res://misc/box_10piasse.tscn" id="32_msfox"]
 [ext_resource type="PackedScene" uid="uid://d3lapwffjtfeo" path="res://misc/brique_1piasse.tscn" id="33_aprob"]
 [ext_resource type="PackedScene" uid="uid://ds0itngtsdvrn" path="res://misc/banque1x10.tscn" id="34_4b1uh"]
-[ext_resource type="PackedScene" uid="uid://cnog8olss4ycr" path="res://misc/bombe_larguee.tscn" id="35_nmd32"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_23xnh"]
 texture = ExtResource("3_3u5cf")
@@ -805,9 +804,6 @@ position = Vector2(501, 516)
 
 [node name="banque_1x10" parent="." instance=ExtResource("34_4b1uh")]
 position = Vector2(522, 476)
-
-[node name="bombe_larguee" parent="." instance=ExtResource("35_nmd32")]
-position = Vector2(466, 535)
 
 [connection signal="body_entered" from="house_mid/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="house_mid/Area2D" to="." method="_on_area_2d_body_exited"]

@@ -36,6 +36,7 @@ func _physics_process(_delta):
 				if direction != 0:
 					$hero_sprite.flip_h = (direction == -1)
 
+
 				if ManagerPlayer.laddering == false:
 					if ManagerPlayer.inwater == false:
 						if Input.is_action_pressed("sprint"):
@@ -127,11 +128,14 @@ func _update_animations(direction):
 
 func _process(_delta: float) -> void:
 
-	if (ManagerPlayer.bombes > 0) and (Input.is_action_just_pressed("bombing")):
-		_bombing(scene_file_path)
-		print("bombing")
-
 	if ManagerPlayer.control_level == true:
+
+		if $hero_sprite.flip_h == false:
+			$bomb_marker.position.x = 16
+		if $hero_sprite.flip_h == true:
+			$bomb_marker.position.x = -16
+		if (ManagerPlayer.bombes > 0) and (Input.is_action_just_pressed("bombing")):
+			_bombing(scene_file_path)
 
 		if ManagerPlayer.megajump == true :
 			if Input.is_action_just_pressed("jump"):

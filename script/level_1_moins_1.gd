@@ -7,3 +7,4 @@ func _ready() -> void:
 	ManagerPlayer.control_level = true
 	LevelCheckManager.worldmap_pause = true
 	
+	

@@ -1,7 +1,8 @@
-[gd_scene load_steps=91 format=4 uid="uid://4uomhu5r21k5"]
+[gd_scene load_steps=94 format=4 uid="uid://4uomhu5r21k5"]
 
 [ext_resource type="Script" path="res://script/level_1_moins_1.gd" id="1_0vvmt"]
 [ext_resource type="Texture2D" uid="uid://drdqrgn6av0ng" path="res://assets/sheet/sky_spritesheet.png" id="1_v1pcb"]
+[ext_resource type="PackedScene" uid="uid://wqduhsfmr6q4" path="res://player/player.tscn" id="2_ddfqc"]
 [ext_resource type="Texture2D" uid="uid://fvjdryq6anmr" path="res://assets/sheet/clouds_defile_spritesheet.png" id="2_x7pli"]
 [ext_resource type="Texture2D" uid="uid://dpvyiam8helb7" path="res://assets/sheet/earth_spritesheet.png" id="3_0i3c6"]
 [ext_resource type="PackedScene" uid="uid://155gktoxjcwb" path="res://misc/spikes.tscn" id="6_uqewv"]
@@ -32,8 +33,10 @@
 [ext_resource type="PackedScene" uid="uid://b6q0m5spdmmkh" path="res://deco/poteau_pencarte.tscn" id="31_uibfv"]
 [ext_resource type="PackedScene" uid="uid://bn0l1e1ryv4rg" path="res://misc/box_100piasse_inv.tscn" id="32_b6dww"]
 [ext_resource type="PackedScene" uid="uid://db8dhuhfch8s7" path="res://misc/floating_logger.tscn" id="34_vbtta"]
+[ext_resource type="PackedScene" uid="uid://beha0ok3jslxa" path="res://items/bombe_ramassable.tscn" id="35_onec6"]
 [ext_resource type="PackedScene" uid="uid://bxpp258va8egn" path="res://misc/wide_water.tscn" id="35_t4vtu"]
 [ext_resource type="Texture2D" uid="uid://bmcmb1bu1iulr" path="res://assets/sheet/earth_soritesheet_front.png" id="35_ubuaf"]
+[ext_resource type="PackedScene" uid="uid://cv8jb1t0h8tki" path="res://misc/passage_secret_explosible_1_moins_1.tscn" id="37_cxoto"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dk8ju"]
 atlas = ExtResource("2_x7pli")
@@ -595,8 +598,8 @@ sources/0 = SubResource("TileSetAtlasSource_shc5p")
 [node name="Level_1_moins_1" type="Node2D"]
 script = ExtResource("1_0vvmt")
 
-[node name="player_start_1_moins_1" type="Marker2D" parent="."]
-position = Vector2(-86, 562)
+[node name="player" parent="." instance=ExtResource("2_ddfqc")]
+position = Vector2(-86, 552)
 
 [node name="sky" type="Sprite2D" parent="."]
 z_index = -4
@@ -1122,3 +1125,9 @@ position = Vector2(1487, 518)
 
 [node name="water" parent="." instance=ExtResource("35_t4vtu")]
 position = Vector2(2571, 621)
+
+[node name="bombe_ramassable" parent="." instance=ExtResource("35_onec6")]
+position = Vector2(1791, 458)
+
+[node name="passage_secret_explosible" parent="." instance=ExtResource("37_cxoto")]
+position = Vector2(1385, 561)

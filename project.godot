@@ -19,6 +19,7 @@ config/icon="res://assets/sprites/icon.svg"
 ManagerPlayer="*res://script/Manager_Player.gd"
 LevelCheckManager="*res://script/LevelCheckManager.gd"
 WorldManager="*res://script/WorldManager.gd"
+PassageManager="*res://script/PassageManager.gd"
 
 [display]
 
@@ -34,6 +35,7 @@ interactable=""
 passage_secret=""
 item=""
 pnj=""
+explosion=""
 
 [input]
 
