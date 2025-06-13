@@ -29,11 +29,16 @@ func _process(_delta: float) -> void:
 
 	if ManagerPlayer.dice1 != 0:
 		ManagerPlayer.dice1 = 0
-	if ManagerPlayer.dice2 != 0:
-		ManagerPlayer.dice2 = 0
-	if ManagerPlayer.dice3 != 0:
-		ManagerPlayer.dice3 = 0
-	if ManagerPlayer.dice4 != 0:
-		ManagerPlayer.dice4 = 0
-	if ManagerPlayer.dice5 != 0:
-		ManagerPlayer.dice5 = 0
+
+	if LevelCheckManager.un_moins_un == true:
+		$"point_1-1".play("checked")
+	if LevelCheckManager.pique == true:
+		$pique_popper.play("popped")
+	if LevelCheckManager.un_1 == true:
+		$point_1_1.play("checked")
+	if LevelCheckManager.un_2 == true:
+		$point_1_2.play("checked")
+	if LevelCheckManager.un_3 == true:
+		$point_1_3.play("checked")
+	if LevelCheckManager.un_dunjeon == true:
+		$dunjeon_sprite.play("destroyed")

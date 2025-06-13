@@ -7,14 +7,6 @@ extends CanvasLayer
 @onready var label_time = $label_time
 @onready var label_money = $label_money
 
-@onready var rk = $rusty_key
-@onready var bk = $bronze_key
-@onready var stk = $steel_key
-@onready var sik = $silver_key
-@onready var gk = $gold_key
-@onready var skk = $skull_key
-@onready var dk = $demon_key
-
 var is_dead = false
 
 func _process(_delta: float) -> void:
@@ -63,6 +55,8 @@ func _process(_delta: float) -> void:
 		is_dead = false
 
 #HUD HP manager
+	if ManagerPlayer.temps == 0:
+		ManagerPlayer.dead = true
 	if ManagerPlayer.hp == 0:
 		hp_sprite.hide()
 	else:
@@ -152,44 +146,44 @@ func _process(_delta: float) -> void:
 		oxy_sprite.play("10")
 
 # Hud Vies manager
-	label_vies.text = "Vies : " + str(ManagerPlayer.vies)
+	label_vies.text = "Vies : " + str(int(ManagerPlayer.vies))
 #HUD Points manager
-	label_points.text = "Points Bonus : " + str(ManagerPlayer.points)
+	label_points.text = "Points Bonus : " + str(int(ManagerPlayer.points))
 #HUD time manager
-	label_time.text = "Décompte : " + str(ManagerPlayer.temps)
+	label_time.text = "Décompte : " + str(int(ManagerPlayer.temps))
 #HUD money manager
-	label_money.text = "Finances : " + str(ManagerPlayer.money)
+	label_money.text = "Finances : " + str(int(ManagerPlayer.money))
 
 #key manager
 	if ManagerPlayer.control_level == true:
 		if ManagerPlayer.rustykey == false:
-			rk.hide()
+			$rusty_key.hide()
 		elif ManagerPlayer.rustykey == true:
-			rk.show()
+			$rusty_key.show()
 		if ManagerPlayer.bronzekey == false:
-			bk.hide()
+			$bronze_key.hide()
 		elif ManagerPlayer. bronzekey == true:
-			bk.show()
+			$bronze_key.show()
 		if ManagerPlayer.steelkey == false:
-			stk.hide()
+			$steel_key.hide()
 		elif ManagerPlayer.steelkey == true:
-			stk.show()
+			$steel_key.show()
 		if ManagerPlayer.silverkey == false:
-			sik.hide()
+			$silver_key.hide()
 		elif ManagerPlayer.silverkey == true:
-			sik.show()
+			$silver_key.show()
 		if ManagerPlayer.goldkey == false:
-			gk.hide()
+			$gold_key.hide()
 		elif ManagerPlayer.goldkey == true:
-			gk.show()
+			$gold_key.show()
 		if ManagerPlayer.skullkey == false:
-			skk.hide()
+			$skull_key.hide()
 		elif ManagerPlayer.skullkey == true:
-			skk.show()
+			$skull_key.show()
 		if ManagerPlayer.demonkey == false:
-			dk.hide()
+			$demon_key.hide()
 		elif ManagerPlayer.demonkey == true:
-			dk.show()
+			$demon_key.show()
 
 func _on_water_timer_timeout() -> void:
 	if ManagerPlayer.inwater == true:

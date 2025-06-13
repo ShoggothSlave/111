@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=4 uid="uid://dmka4ced8kgr8"]
+[gd_scene load_steps=107 format=4 uid="uid://dmka4ced8kgr8"]
 
 [ext_resource type="Texture2D" uid="uid://dxy8xvoqrrwpp" path="res://assets/sprites/worldmap_part1.png" id="1_eqcue"]
 [ext_resource type="Texture2D" uid="uid://ct6iw5ortahns" path="res://assets/sprites/worldmap_sea.png" id="1_fns58"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cr3pobubm2u53" path="res://assets/sheet/spritesheet_oxy.png" id="7_ws23x"]
 [ext_resource type="FontFile" uid="uid://dpbf8lot64qya" path="res://assets/8-bit Arcade In.ttf" id="8_3s7ay"]
 [ext_resource type="PackedScene" uid="uid://dkyvfoxpglp0f" path="res://deco/petit_sapin.tscn" id="13_08xtk"]
+[ext_resource type="Texture2D" uid="uid://0lk78qyrhj8c" path="res://assets/sheet/dunjeon_spritesheet.png" id="13_mpqgx"]
 [ext_resource type="PackedScene" uid="uid://dbglqhwprnfqt" path="res://deco/sapin.tscn" id="14_5ddrf"]
 [ext_resource type="PackedScene" uid="uid://cbh3enxbf3hj3" path="res://deco/grand_sapin.tscn" id="15_8e0jy"]
 [ext_resource type="PackedScene" uid="uid://k4aigtwpdrqd" path="res://deco/tres_grand_sapin.tscn" id="16_sj6bj"]
@@ -871,6 +872,33 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_nsqjx"]
 radius = 4.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fprbv"]
+atlas = ExtResource("13_mpqgx")
+region = Rect2(24, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44mwr"]
+atlas = ExtResource("13_mpqgx")
+region = Rect2(0, 0, 24, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7sne0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fprbv")
+}],
+"loop": true,
+"name": &"destroyed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44mwr")
+}],
+"loop": true,
+"name": &"erected",
+"speed": 5.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_ye5jd"]
 radius = 6.08276
 
@@ -1109,6 +1137,12 @@ position = Vector2(279, 406)
 
 [node name="dunjeon_1_mark" type="Marker2D" parent="."]
 position = Vector2(248, 397)
+
+[node name="dunjeon_sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(248, 389)
+sprite_frames = SubResource("SpriteFrames_7sne0")
+animation = &"erected"
+autoplay = "erected"
 
 [node name="area_dunjeon_1" type="Area2D" parent="."]
 position = Vector2(248, 397)

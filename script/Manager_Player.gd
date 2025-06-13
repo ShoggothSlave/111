@@ -46,7 +46,4 @@ var demonkey = false
 var demonlock = false
 #DICES
 var dice1 = 0
-var dice2 = 0
-var dice3 = 0
-var dice4 = 0
-var dice5 = 0
+var fin_de_level = false

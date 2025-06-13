@@ -20,7 +20,6 @@ ManagerPlayer="*res://script/Manager_Player.gd"
 LevelCheckManager="*res://script/LevelCheckManager.gd"
 WorldManager="*res://script/WorldManager.gd"
 PassageManager="*res://script/PassageManager.gd"
-YahtzeeManager="*res://script/YahtzeeManager.gd"
 
 [display]
 
