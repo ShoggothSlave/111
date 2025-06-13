@@ -285,3 +285,6 @@ func _bombing(_scene_file_path):
 	object.global_position = new_position
 	get_parent().add_child(object)
 	ManagerPlayer.bombes = ManagerPlayer.bombes - 1
+
+func _get_key():
+	$audio_getkey.play()

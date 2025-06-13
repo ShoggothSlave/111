@@ -6,3 +6,6 @@ func _ready() -> void:
 	ManagerPlayer.control_worldmap = false
 	ManagerPlayer.control_level = true
 	LevelCheckManager.worldmap_pause = true
+
+func _on_traveling_timer_timeout() -> void:
+	$black_screen.hide()

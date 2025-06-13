@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://wqduhsfmr6q4"]
+[gd_scene load_steps=85 format=3 uid="uid://wqduhsfmr6q4"]
 
 [ext_resource type="Script" path="res://script/player.gd" id="1_ew68v"]
 [ext_resource type="Texture2D" uid="uid://bf0xij7siwsa1" path="res://assets/sheet/hero_spritesheet.png" id="1_r0dss"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://bfxxgsc4g2vo7" path="res://sons/clown-horn-44595.wav" id="11_wtrhi"]
 [ext_resource type="Texture2D" uid="uid://ffuxwngsdlgb" path="res://assets/sprites/bomb.png" id="12_b6oxp"]
 [ext_resource type="AudioStream" uid="uid://cyacdcbh32hw0" path="res://sons/coin-257878.wav" id="12_vxc3b"]
+[ext_resource type="Texture2D" uid="uid://dcblr618r01o7" path="res://assets/sheet/keys_spritesheet.png" id="13_8r1ch"]
 [ext_resource type="AudioStream" uid="uid://bjccc05hgaubb" path="res://sons/level-up-2-199574.mp3" id="13_ce6wd"]
 [ext_resource type="AudioStream" uid="uid://duo5w0dfbxju8" path="res://sons/cash-register-kaching-sound-effect-125042.wav" id="14_l6eb4"]
 [ext_resource type="AudioStream" uid="uid://c6rsccpk8b741" path="res://sons/pixel-jump-319167.wav" id="15_wyjmu"]
@@ -23,6 +24,7 @@
 [ext_resource type="AudioStream" uid="uid://bfavyj7tgrpv4" path="res://sons/music/Rare_item_find.wav" id="20_anorc"]
 [ext_resource type="Texture2D" uid="uid://c5uhwtrpjnmnl" path="res://assets/sprites/point_dinteraction.png" id="21_y21vd"]
 [ext_resource type="AudioStream" uid="uid://bkuv8m7omttc" path="res://sons/get-up-pierrot-atm-notification-94647.wav" id="22_4jjuv"]
+[ext_resource type="AudioStream" uid="uid://da4r0djyq87w5" path="res://sons/key-get-39925.wav" id="25_ak8gx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n1ddq"]
 radius = 2.0
@@ -1289,7 +1291,7 @@ max_polyphony = 5
 script = ExtResource("7_2esxu")
 
 [node name="hp_sprite" type="AnimatedSprite2D" parent="HUD"]
-position = Vector2(711, 12)
+position = Vector2(711, 31)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_n1fvk")
 animation = &"25"
@@ -1306,10 +1308,10 @@ anchor_left = 0.001
 anchor_top = 0.915
 anchor_right = 0.123
 anchor_bottom = 1.0
-offset_left = -0.152
-offset_top = -9.92004
-offset_right = 0.304001
-offset_bottom = -10.0
+offset_left = 12.848
+offset_top = 7.07996
+offset_right = 13.304
+offset_bottom = 7.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -1324,10 +1326,10 @@ anchor_left = 0.127
 anchor_top = 0.918
 anchor_right = 0.509
 anchor_bottom = 1.022
-offset_left = -0.304001
-offset_top = -9.86401
-offset_right = -0.367981
-offset_bottom = -10.256
+offset_left = 12.696
+offset_top = 7.13599
+offset_right = 12.632
+offset_bottom = 6.74402
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -1342,10 +1344,10 @@ anchor_left = 0.517
 anchor_top = 0.918
 anchor_right = 0.744
 anchor_bottom = 1.022
-offset_left = 0.415955
-offset_top = -9.86401
-offset_right = -0.0880127
-offset_bottom = -10.256
+offset_left = 13.416
+offset_top = 7.13599
+offset_right = 12.912
+offset_bottom = 6.74402
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -1360,10 +1362,10 @@ anchor_left = 0.75
 anchor_top = 0.918
 anchor_right = 1.0
 anchor_bottom = 1.022
-offset_left = -6.10352e-05
-offset_top = -9.86401
-offset_right = -3.0
-offset_bottom = -10.256
+offset_left = 12.9999
+offset_top = 7.13599
+offset_right = 10.0
+offset_bottom = 6.74402
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -1389,6 +1391,69 @@ texture = ExtResource("12_b6oxp")
 visible = false
 position = Vector2(17, 80)
 texture = ExtResource("12_b6oxp")
+
+[node name="rusty_key" type="Sprite2D" parent="HUD"]
+visible = false
+position = Vector2(1420, 40)
+scale = Vector2(2, 2)
+texture = ExtResource("13_8r1ch")
+hframes = 4
+vframes = 2
+frame = 1
+
+[node name="bronze_key" type="Sprite2D" parent="HUD"]
+visible = false
+position = Vector2(1420, 100)
+scale = Vector2(2, 2)
+texture = ExtResource("13_8r1ch")
+hframes = 4
+vframes = 2
+frame = 2
+
+[node name="steel_key" type="Sprite2D" parent="HUD"]
+visible = false
+position = Vector2(1420, 160)
+scale = Vector2(2, 2)
+texture = ExtResource("13_8r1ch")
+hframes = 4
+vframes = 2
+frame = 3
+
+[node name="silver_key" type="Sprite2D" parent="HUD"]
+visible = false
+position = Vector2(1420, 220)
+scale = Vector2(2, 2)
+texture = ExtResource("13_8r1ch")
+hframes = 4
+vframes = 2
+frame = 4
+
+[node name="gold_key" type="Sprite2D" parent="HUD"]
+visible = false
+position = Vector2(1420, 280)
+scale = Vector2(2, 2)
+texture = ExtResource("13_8r1ch")
+hframes = 4
+vframes = 2
+frame = 5
+
+[node name="skull_key" type="Sprite2D" parent="HUD"]
+visible = false
+position = Vector2(1420, 340)
+scale = Vector2(2, 2)
+texture = ExtResource("13_8r1ch")
+hframes = 4
+vframes = 2
+frame = 6
+
+[node name="demon_key" type="Sprite2D" parent="HUD"]
+visible = false
+position = Vector2(1420, 400)
+scale = Vector2(2, 2)
+texture = ExtResource("13_8r1ch")
+hframes = 4
+vframes = 2
+frame = 7
 
 [node name="ouch" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_tur5e")
@@ -1444,6 +1509,9 @@ stream = ExtResource("22_4jjuv")
 
 [node name="bomb_marker" type="Marker2D" parent="."]
 position = Vector2(16, 5)
+
+[node name="audio_getkey" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_ak8gx")
 
 [connection signal="timeout" from="kick/kick_timer" to="." method="_on_kick_timer_timeout"]
 [connection signal="timeout" from="timer_mort" to="." method="_on_timer_mort_timeout"]

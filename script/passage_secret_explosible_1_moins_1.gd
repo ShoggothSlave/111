@@ -17,7 +17,8 @@ func _on_area_entered(_area: Area2D) -> void:
 func _process(_delta: float) -> void:
 	if player_in_collision:
 		if $Sprite2D.frame == 1 and Input.is_action_just_pressed("up"):
-			get_tree().change_scene_to_file("res://levels/caverne_1_un_moins_un.tscn")
+			$"../black_screen".show()
+			$"../cave_passage_timer".start()
 
 func _on_body_entered(_body: Node2D) -> void:
 	if _body is player:
@@ -26,3 +27,8 @@ func _on_body_entered(_body: Node2D) -> void:
 func _on_body_exited(_body: Node2D) -> void:
 	if _body is player:
 		player_in_collision = false
+
+func _on_cave_passage_timer_timeout() -> void:
+	$"../player".position = Vector2(1395, 945)
+	$"../traveling_timer".start()
+	

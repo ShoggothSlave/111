@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdje7bmda0vn5"]
+
+[ext_resource type="Script" path="res://script/silver_key.gd" id="1_68fhx"]
+[ext_resource type="Texture2D" uid="uid://dcblr618r01o7" path="res://assets/sheet/keys_spritesheet.png" id="2_s6enh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eh0vx"]
+radius = 4.0
+height = 12.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4y50c"]
+radius = 4.0
+height = 12.0
+
+[node name="silver_key" type="Area2D"]
+z_index = 3
+collision_layer = 32
+script = ExtResource("1_68fhx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 3
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_s6enh")
+hframes = 4
+vframes = 2
+frame = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 3
+shape = SubResource("CapsuleShape2D_eh0vx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+z_index = 3
+collision_layer = 32
+collision_mask = 14
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 3
+shape = SubResource("CapsuleShape2D_4y50c")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
