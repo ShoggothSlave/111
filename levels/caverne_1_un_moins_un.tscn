@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://cxsttndoa0tmb"]
+[gd_scene load_steps=19 format=4 uid="uid://cxsttndoa0tmb"]
 
 [ext_resource type="Texture2D" uid="uid://dt2qycqnk5gx4" path="res://assets/sheet/earth_spritesheet_fond.png" id="1_6rwyp"]
 [ext_resource type="Texture2D" uid="uid://bvb307ha0vm16" path="res://assets/sprites/passage_explose.png" id="2_hpoqt"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://bvocbb36mssuo" path="res://misc/flipper_block.tscn" id="11_1wgo4"]
 [ext_resource type="Texture2D" uid="uid://sjqd5ow0l4dy" path="res://assets/sprites/black_screen.png" id="12_2qfwk"]
 [ext_resource type="PackedScene" uid="uid://wqduhsfmr6q4" path="res://player/player.tscn" id="13_1rm2k"]
+[ext_resource type="PackedScene" uid="uid://djv35mrur0bcm" path="res://items/sprout_1piasse.tscn" id="14_cbtrj"]
+[ext_resource type="PackedScene" uid="uid://b1jnpfyn5244f" path="res://items/carrot.tscn" id="15_hb1u0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sxajk"]
 texture = ExtResource("1_6rwyp")
@@ -161,6 +163,12 @@ texture = ExtResource("12_2qfwk")
 
 [node name="player" parent="." instance=ExtResource("13_1rm2k")]
 position = Vector2(384, 350)
+
+[node name="sprout_1piasse" parent="." instance=ExtResource("14_cbtrj")]
+position = Vector2(318, 322)
+
+[node name="carrot" parent="." instance=ExtResource("15_hb1u0")]
+position = Vector2(486, 358)
 
 [connection signal="body_entered" from="Sprite2D/passage_secret_1_moins_1_otherside" to="Sprite2D/passage_secret_1_moins_1_otherside" method="_on_body_entered"]
 [connection signal="body_exited" from="Sprite2D/passage_secret_1_moins_1_otherside" to="Sprite2D/passage_secret_1_moins_1_otherside" method="_on_body_exited"]

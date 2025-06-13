@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=4 uid="uid://br35e4vneusx3"]
+[gd_scene load_steps=78 format=4 uid="uid://br35e4vneusx3"]
 
 [ext_resource type="Script" path="res://script/level_1_intro.gd" id="1_sklvn"]
 [ext_resource type="PackedScene" uid="uid://wqduhsfmr6q4" path="res://player/player.tscn" id="2_ujk4r"]
@@ -34,6 +34,18 @@
 [ext_resource type="PackedScene" uid="uid://c1vlw4282ipn" path="res://misc/box_10piasse.tscn" id="32_msfox"]
 [ext_resource type="PackedScene" uid="uid://d3lapwffjtfeo" path="res://misc/brique_1piasse.tscn" id="33_aprob"]
 [ext_resource type="PackedScene" uid="uid://ds0itngtsdvrn" path="res://misc/banque1x10.tscn" id="34_4b1uh"]
+[ext_resource type="PackedScene" uid="uid://djv35mrur0bcm" path="res://items/sprout_1piasse.tscn" id="35_ycpna"]
+[ext_resource type="PackedScene" uid="uid://cda0w1yq8r8n0" path="res://items/sprout_2piasse.tscn" id="36_jdreo"]
+[ext_resource type="PackedScene" uid="uid://b1jnpfyn5244f" path="res://items/carrot.tscn" id="37_sobca"]
+[ext_resource type="PackedScene" uid="uid://bu83d75rtabua" path="res://deco/fouin.tscn" id="38_u3gii"]
+[ext_resource type="PackedScene" uid="uid://cbh3enxbf3hj3" path="res://deco/grand_sapin.tscn" id="39_r8kl2"]
+[ext_resource type="PackedScene" uid="uid://dkyvfoxpglp0f" path="res://deco/petit_sapin.tscn" id="40_djbex"]
+[ext_resource type="PackedScene" uid="uid://dbglqhwprnfqt" path="res://deco/sapin.tscn" id="41_hnf5f"]
+[ext_resource type="PackedScene" uid="uid://k4aigtwpdrqd" path="res://deco/tres_grand_sapin.tscn" id="42_ok1di"]
+[ext_resource type="PackedScene" uid="uid://b6q0m5spdmmkh" path="res://deco/poteau_pencarte.tscn" id="43_lqyum"]
+[ext_resource type="PackedScene" uid="uid://bvocbb36mssuo" path="res://misc/flipper_block.tscn" id="44_h1jxw"]
+[ext_resource type="PackedScene" uid="uid://rervh8y3mysk" path="res://misc/box_1piasse_inv.tscn" id="45_eml5g"]
+[ext_resource type="PackedScene" uid="uid://db7f65770nntx" path="res://misc/guimauve.tscn" id="46_2l1c6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_23xnh"]
 texture = ExtResource("3_3u5cf")
@@ -755,6 +767,7 @@ tile_set = SubResource("TileSet_i8a2d")
 position = Vector2(1192, 376)
 
 [node name="pipe_up" parent="." instance=ExtResource("26_khg05")]
+z_index = 3
 position = Vector2(1138, 566)
 
 [node name="black_screen" type="Sprite2D" parent="pipe_up"]
@@ -804,6 +817,212 @@ position = Vector2(501, 516)
 
 [node name="banque_1x10" parent="." instance=ExtResource("34_4b1uh")]
 position = Vector2(522, 476)
+
+[node name="sprout_1piasse" parent="." instance=ExtResource("35_ycpna")]
+position = Vector2(377, 573)
+
+[node name="sprout_2piasse" parent="." instance=ExtResource("36_jdreo")]
+position = Vector2(531, 573)
+
+[node name="carrot" parent="." instance=ExtResource("37_sobca")]
+position = Vector2(1053, 573)
+
+[node name="sprout_1piasse2" parent="." instance=ExtResource("35_ycpna")]
+position = Vector2(952, 573)
+
+[node name="fouin" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(479, 568)
+
+[node name="fouin2" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(495, 568)
+
+[node name="fouin3" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(511, 568)
+
+[node name="fouin4" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(527, 568)
+
+[node name="fouin5" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(543, 568)
+
+[node name="fouin6" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(558, 568)
+
+[node name="fouin7" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(574, 568)
+
+[node name="fouin8" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(590, 568)
+
+[node name="fouin9" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(606, 568)
+
+[node name="fouin10" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(621, 568)
+
+[node name="fouin11" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(637, 568)
+
+[node name="fouin12" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(653, 568)
+
+[node name="fouin13" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(669, 568)
+
+[node name="fouin14" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(685, 568)
+
+[node name="fouin15" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(701, 568)
+
+[node name="fouin16" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(716, 569)
+
+[node name="fouin17" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(732, 568)
+
+[node name="fouin18" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(748, 568)
+
+[node name="fouin19" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(764, 568)
+
+[node name="fouin20" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(780, 568)
+
+[node name="fouin21" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(796, 568)
+
+[node name="fouin22" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(812, 568)
+
+[node name="fouin23" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(828, 568)
+
+[node name="fouin24" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(844, 568)
+
+[node name="fouin25" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(860, 568)
+
+[node name="fouin26" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(876, 568)
+
+[node name="fouin27" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(892, 568)
+
+[node name="fouin28" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(908, 568)
+
+[node name="fouin29" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(924, 568)
+
+[node name="fouin30" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(940, 568)
+
+[node name="fouin31" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(956, 568)
+
+[node name="fouin32" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(972, 568)
+
+[node name="fouin33" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(988, 568)
+
+[node name="fouin34" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(1004, 568)
+
+[node name="fouin35" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(1020, 568)
+
+[node name="fouin36" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(1036, 568)
+
+[node name="fouin37" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(1052, 568)
+
+[node name="fouin38" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(1068, 568)
+
+[node name="fouin39" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(1084, 568)
+
+[node name="fouin40" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(1100, 568)
+
+[node name="fouin41" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(1116, 568)
+
+[node name="fouin42" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(1132, 568)
+
+[node name="fouin43" parent="." instance=ExtResource("38_u3gii")]
+position = Vector2(1148, 568)
+
+[node name="grand_sapin" parent="." instance=ExtResource("39_r8kl2")]
+position = Vector2(422, 551)
+
+[node name="petit_sapin" parent="." instance=ExtResource("40_djbex")]
+position = Vector2(385, 560)
+
+[node name="sapin" parent="." instance=ExtResource("41_hnf5f")]
+z_index = 6
+position = Vector2(611, 547)
+
+[node name="tres_grand_sapin" parent="." instance=ExtResource("42_ok1di")]
+z_index = -1
+position = Vector2(559, 541)
+
+[node name="petit_sapin2" parent="." instance=ExtResource("40_djbex")]
+z_index = -1
+position = Vector2(481, 555)
+
+[node name="grand_sapin2" parent="." instance=ExtResource("39_r8kl2")]
+z_index = -1
+position = Vector2(792, 544)
+
+[node name="sapin2" parent="." instance=ExtResource("41_hnf5f")]
+z_index = 6
+position = Vector2(832, 548)
+
+[node name="petit_sapin3" parent="." instance=ExtResource("40_djbex")]
+z_index = -1
+position = Vector2(896, 554)
+
+[node name="grand_sapin3" parent="." instance=ExtResource("39_r8kl2")]
+z_index = -1
+position = Vector2(917, 543)
+
+[node name="sapin3" parent="." instance=ExtResource("41_hnf5f")]
+z_index = 6
+position = Vector2(971, 547)
+
+[node name="tres_grand_sapin2" parent="." instance=ExtResource("42_ok1di")]
+z_index = -1
+position = Vector2(1005, 534)
+
+[node name="sapin4" parent="." instance=ExtResource("41_hnf5f")]
+z_index = -1
+position = Vector2(1078, 540)
+
+[node name="poteau_pencarte" parent="." instance=ExtResource("43_lqyum")]
+z_index = -1
+position = Vector2(1100, 569)
+
+[node name="poteau_pencarte2" parent="." instance=ExtResource("43_lqyum")]
+position = Vector2(1100, 553)
+
+[node name="flipper_block" parent="." instance=ExtResource("44_h1jxw")]
+position = Vector2(1100, 543)
+
+[node name="box_1piasse_inv" parent="." instance=ExtResource("45_eml5g")]
+position = Vector2(1089, 509)
+
+[node name="guimauve" parent="." instance=ExtResource("46_2l1c6")]
+position = Vector2(1046, 510)
+
+[node name="banque_1x11" parent="." instance=ExtResource("34_4b1uh")]
+position = Vector2(1045, 467)
 
 [connection signal="body_entered" from="house_mid/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="house_mid/Area2D" to="." method="_on_area_2d_body_exited"]

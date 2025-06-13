@@ -11,6 +11,7 @@ func _ready() -> void:
 func _on_area_entered(_area: Area2D) -> void:
 	if _area.is_in_group("explosion"):
 		$Sprite2D.frame = 1
+		$AudioStreamPlayer.play()
 		PassageManager.un_moins_un_caverne = true
 
 func _process(_delta: float) -> void:

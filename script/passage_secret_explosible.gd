@@ -5,6 +5,7 @@ var player_in_collision = false
 func _on_area_entered(_area: Area2D) -> void:
 	if _area.is_in_group("explosion"):
 		$Sprite2D.frame = 1
+		$AudioStreamPlayer.play()
 
 func _process(_delta: float) -> void:
 	if player_in_collision:
