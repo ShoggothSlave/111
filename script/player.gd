@@ -130,6 +130,11 @@ func _process(_delta: float) -> void:
 
 	if ManagerPlayer.control_level == true:
 
+		if ManagerPlayer.interaction_possible == true:
+			$interact_sprite.show()
+		elif ManagerPlayer.interaction_possible == false:
+			$interact_sprite.hide()
+
 		if $hero_sprite.flip_h == false:
 			$bomb_marker.position.x = 16
 		if $hero_sprite.flip_h == true:
@@ -141,11 +146,6 @@ func _process(_delta: float) -> void:
 			if Input.is_action_just_pressed("jump"):
 				velocity.y = -jump_force * 2.25
 				ManagerPlayer.megajump = false
-
-		if ManagerPlayer.interaction_possible == true:
-			$interact_sprite.show()
-		elif ManagerPlayer.interaction_possible == false:
-			$interact_sprite.hide()
 
 		if ManagerPlayer.oxy == 0:
 			ManagerPlayer.dead = true

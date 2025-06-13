@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=4 uid="uid://4uomhu5r21k5"]
+[gd_scene load_steps=97 format=4 uid="uid://4uomhu5r21k5"]
 
 [ext_resource type="Script" path="res://script/level_1_moins_1.gd" id="1_0vvmt"]
 [ext_resource type="Texture2D" uid="uid://drdqrgn6av0ng" path="res://assets/sheet/sky_spritesheet.png" id="1_v1pcb"]
@@ -37,6 +37,9 @@
 [ext_resource type="PackedScene" uid="uid://bxpp258va8egn" path="res://misc/wide_water.tscn" id="35_t4vtu"]
 [ext_resource type="Texture2D" uid="uid://bmcmb1bu1iulr" path="res://assets/sheet/earth_soritesheet_front.png" id="35_ubuaf"]
 [ext_resource type="PackedScene" uid="uid://cv8jb1t0h8tki" path="res://misc/passage_secret_explosible_1_moins_1.tscn" id="37_cxoto"]
+[ext_resource type="PackedScene" uid="uid://djv35mrur0bcm" path="res://items/sprout_1piasse.tscn" id="38_bu8jm"]
+[ext_resource type="PackedScene" uid="uid://b1jnpfyn5244f" path="res://items/carrot.tscn" id="39_3nxwt"]
+[ext_resource type="PackedScene" uid="uid://cda0w1yq8r8n0" path="res://items/sprout_2piasse.tscn" id="40_yux5n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dk8ju"]
 atlas = ExtResource("2_x7pli")
@@ -1131,3 +1134,45 @@ position = Vector2(1791, 458)
 
 [node name="passage_secret_explosible" parent="." instance=ExtResource("37_cxoto")]
 position = Vector2(1385, 561)
+
+[node name="sprout_1piasse" parent="." instance=ExtResource("38_bu8jm")]
+position = Vector2(-7, 570)
+
+[node name="sprout_1piasse2" parent="." instance=ExtResource("38_bu8jm")]
+position = Vector2(146, 570)
+
+[node name="carrot" parent="." instance=ExtResource("39_3nxwt")]
+position = Vector2(69, 510)
+
+[node name="sprout_1piasse3" parent="." instance=ExtResource("38_bu8jm")]
+position = Vector2(264, 570)
+
+[node name="sprout_2piasse" parent="." instance=ExtResource("40_yux5n")]
+position = Vector2(440, 570)
+
+[node name="sprout_1piasse4" parent="." instance=ExtResource("38_bu8jm")]
+position = Vector2(544, 582)
+
+[node name="sprout_1piasse5" parent="." instance=ExtResource("38_bu8jm")]
+position = Vector2(742, 558)
+
+[node name="carrot2" parent="." instance=ExtResource("39_3nxwt")]
+position = Vector2(1077, 510)
+
+[node name="sprout_1piasse6" parent="." instance=ExtResource("38_bu8jm")]
+position = Vector2(1265, 546)
+
+[node name="sprout_1piasse7" parent="." instance=ExtResource("38_bu8jm")]
+position = Vector2(1527, 546)
+
+[node name="sprout_1piasse8" parent="." instance=ExtResource("38_bu8jm")]
+position = Vector2(1928, 378)
+
+[node name="sprout_1piasse9" parent="." instance=ExtResource("38_bu8jm")]
+position = Vector2(2343, 570)
+
+[node name="sprout_1piasse10" parent="." instance=ExtResource("38_bu8jm")]
+position = Vector2(2750, 558)
+
+[node name="carrot3" parent="." instance=ExtResource("39_3nxwt")]
+position = Vector2(2863, 570)
