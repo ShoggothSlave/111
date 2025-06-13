@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://bni33e863nem4" path="res://misc/box_10piasse_inv.tscn" id="11_wht7e"]
 [ext_resource type="PackedScene" uid="uid://wkmhjcnrqv2v" path="res://misc/brique.tscn" id="13_pxft8"]
 [ext_resource type="PackedScene" uid="uid://d3lapwffjtfeo" path="res://misc/brique_1piasse.tscn" id="14_j1gsq"]
-[ext_resource type="PackedScene" uid="uid://dmrlxmov0dffw" path="res://misc/trampoline.tscn" id="15_siktv"]
 [ext_resource type="PackedScene" uid="uid://de6r5jbkfj3ac" path="res://misc/nuage.tscn" id="16_ax1qo"]
 [ext_resource type="PackedScene" uid="uid://cahaoj2awybi4" path="res://items/1_piasse.tscn" id="17_mk312"]
 [ext_resource type="PackedScene" uid="uid://rervh8y3mysk" path="res://misc/box_1piasse_inv.tscn" id="18_6j8fc"]
@@ -47,6 +46,7 @@
 [ext_resource type="PackedScene" uid="uid://bhgua25p1m08n" path="res://items/2_piasse.tscn" id="45_dlc58"]
 [ext_resource type="PackedScene" uid="uid://b1ofytmj4x3a2" path="res://misc/box_5piasse.tscn" id="46_80l47"]
 [ext_resource type="Texture2D" uid="uid://sjqd5ow0l4dy" path="res://assets/sprites/black_screen.png" id="47_5yrkg"]
+[ext_resource type="PackedScene" uid="uid://cnqcj2v7d362q" path="res://misc/box_trampoline.tscn" id="47_7m1os"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dk8ju"]
 atlas = ExtResource("2_x7pli")
@@ -741,6 +741,26 @@ autoplay = "defile"
 frame = 11
 frame_progress = 0.339371
 
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="."]
+z_index = -2
+position = Vector2(574.5, 127)
+scale = Vector2(1.80156, 1.82105)
+sprite_frames = SubResource("SpriteFrames_inilw")
+animation = &"defile"
+autoplay = "defile"
+frame = 11
+frame_progress = 0.339371
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="."]
+z_index = -2
+position = Vector2(1930, 127)
+scale = Vector2(1.80156, 1.82105)
+sprite_frames = SubResource("SpriteFrames_inilw")
+animation = &"defile"
+autoplay = "defile"
+frame = 11
+frame_progress = 0.339371
+
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
 z_index = -2
 position = Vector2(1131, 417)
@@ -872,17 +892,11 @@ position = Vector2(719, 533)
 [node name="brique" parent="." instance=ExtResource("13_pxft8")]
 position = Vector2(709, 533)
 
-[node name="brique2" parent="." instance=ExtResource("13_pxft8")]
-position = Vector2(729, 533)
-
 [node name="brique3" parent="." instance=ExtResource("13_pxft8")]
 position = Vector2(699, 533)
 
 [node name="box_1piasse" parent="." instance=ExtResource("14_j1gsq")]
 position = Vector2(739, 533)
-
-[node name="trampoline" parent="." instance=ExtResource("15_siktv")]
-position = Vector2(719, 522)
 
 [node name="nuage" parent="." instance=ExtResource("16_ax1qo")]
 position = Vector2(716, 359)
@@ -1359,6 +1373,70 @@ position = Vector2(2302, 549)
 
 [node name="carniplante3" parent="." instance=ExtResource("7_wyqou")]
 position = Vector2(1349, 891)
+
+[node name="box_trampolin" parent="." instance=ExtResource("47_7m1os")]
+position = Vector2(729, 521)
+
+[node name="dalle_indestructible18" parent="." instance=ExtResource("24_hokcp")]
+z_index = 2
+position = Vector2(729, 533)
+
+[node name="grand_sapin10" parent="." instance=ExtResource("28_wr63d")]
+z_index = -1
+position = Vector2(526, 552)
+
+[node name="petit_sapin13" parent="." instance=ExtResource("27_obkej")]
+z_index = 6
+position = Vector2(493, 569)
+
+[node name="sapin12" parent="." instance=ExtResource("30_8t11b")]
+z_index = 6
+position = Vector2(-122, 536)
+
+[node name="grand_sapin11" parent="." instance=ExtResource("28_wr63d")]
+z_index = 6
+position = Vector2(-155, 493)
+
+[node name="tres_grand_sapin11" parent="." instance=ExtResource("29_xocyh")]
+z_index = 6
+position = Vector2(-178, 440)
+
+[node name="petit_sapin14" parent="." instance=ExtResource("27_obkej")]
+z_index = 6
+position = Vector2(-205, 422)
+
+[node name="sapin13" parent="." instance=ExtResource("30_8t11b")]
+z_index = 6
+position = Vector2(-231, 400)
+
+[node name="grand_sapin12" parent="." instance=ExtResource("28_wr63d")]
+z_index = 6
+position = Vector2(-265, 388)
+
+[node name="petit_sapin15" parent="." instance=ExtResource("27_obkej")]
+position = Vector2(-284, 368)
+
+[node name="tres_grand_sapin12" parent="." instance=ExtResource("29_xocyh")]
+position = Vector2(-247, 390)
+
+[node name="sapin14" parent="." instance=ExtResource("30_8t11b")]
+position = Vector2(-220, 405)
+
+[node name="grand_sapin13" parent="." instance=ExtResource("28_wr63d")]
+position = Vector2(-195, 424)
+
+[node name="petit_sapin16" parent="." instance=ExtResource("27_obkej")]
+position = Vector2(-169, 484)
+
+[node name="sapin15" parent="." instance=ExtResource("30_8t11b")]
+position = Vector2(-144, 529)
+
+[node name="sapin16" parent="." instance=ExtResource("30_8t11b")]
+z_index = 6
+position = Vector2(-275, 369)
+
+[node name="tres_grand_sapin13" parent="." instance=ExtResource("29_xocyh")]
+position = Vector2(-301, 335)
 
 [connection signal="timeout" from="traveling_timer" to="." method="_on_traveling_timer_timeout"]
 [connection signal="timeout" from="cave_passage_timer" to="passage_secret_explosible" method="_on_cave_passage_timer_timeout"]

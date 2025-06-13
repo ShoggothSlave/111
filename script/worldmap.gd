@@ -26,3 +26,14 @@ func _process(_delta: float) -> void:
 		get_tree().paused = true;
 	elif LevelCheckManager.worldmap_pause == false:
 		get_tree().paused = false;
+
+	if ManagerPlayer.dice1 != 0:
+		ManagerPlayer.dice1 = 0
+	if ManagerPlayer.dice2 != 0:
+		ManagerPlayer.dice2 = 0
+	if ManagerPlayer.dice3 != 0:
+		ManagerPlayer.dice3 = 0
+	if ManagerPlayer.dice4 != 0:
+		ManagerPlayer.dice4 = 0
+	if ManagerPlayer.dice5 != 0:
+		ManagerPlayer.dice5 = 0

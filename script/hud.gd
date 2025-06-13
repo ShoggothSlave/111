@@ -161,34 +161,35 @@ func _process(_delta: float) -> void:
 	label_money.text = "Finances : " + str(ManagerPlayer.money)
 
 #key manager
-	if ManagerPlayer.rustykey == false:
-		rk.hide()
-	elif ManagerPlayer.rustykey == true:
-		rk.show()
-	if ManagerPlayer.bronzekey == false:
-		bk.hide()
-	elif ManagerPlayer. bronzekey == true:
-		bk.show()
-	if ManagerPlayer.steelkey == false:
-		stk.hide()
-	elif ManagerPlayer.steelkey == true:
-		stk.show()
-	if ManagerPlayer.silverkey == false:
-		sik.hide()
-	elif ManagerPlayer.silverkey == true:
-		sik.show()
-	if ManagerPlayer.goldkey == false:
-		gk.hide()
-	elif ManagerPlayer.goldkey == true:
-		gk.show()
-	if ManagerPlayer.skullkey == false:
-		skk.hide()
-	elif ManagerPlayer.skullkey == true:
-		skk.show()
-	if ManagerPlayer.demonkey == false:
-		dk.hide()
-	elif ManagerPlayer.demonkey == true:
-		dk.show()
+	if ManagerPlayer.control_level == true:
+		if ManagerPlayer.rustykey == false:
+			rk.hide()
+		elif ManagerPlayer.rustykey == true:
+			rk.show()
+		if ManagerPlayer.bronzekey == false:
+			bk.hide()
+		elif ManagerPlayer. bronzekey == true:
+			bk.show()
+		if ManagerPlayer.steelkey == false:
+			stk.hide()
+		elif ManagerPlayer.steelkey == true:
+			stk.show()
+		if ManagerPlayer.silverkey == false:
+			sik.hide()
+		elif ManagerPlayer.silverkey == true:
+			sik.show()
+		if ManagerPlayer.goldkey == false:
+			gk.hide()
+		elif ManagerPlayer.goldkey == true:
+			gk.show()
+		if ManagerPlayer.skullkey == false:
+			skk.hide()
+		elif ManagerPlayer.skullkey == true:
+			skk.show()
+		if ManagerPlayer.demonkey == false:
+			dk.hide()
+		elif ManagerPlayer.demonkey == true:
+			dk.show()
 
 func _on_water_timer_timeout() -> void:
 	if ManagerPlayer.inwater == true:
