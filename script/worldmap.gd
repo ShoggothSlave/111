@@ -24,9 +24,9 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if LevelCheckManager.worldmap_pause == true:
-		get_tree().paused = true;
+		process_mode = PROCESS_MODE_DISABLED; # old method pauses the ENTIRE SCENE TREE including the level
 	elif LevelCheckManager.worldmap_pause == false:
-		get_tree().paused = false;
+		process_mode = PROCESS_MODE_INHERIT; # old method pauses the ENTIRE SCENE TREE including the level
 
 	if ManagerPlayer.dice1 != 0:
 		ManagerPlayer.dice1 = 0
