@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready() -> void:
+	ManagerPlayer.hp = ManagerPlayer.hpmax
 	ManagerPlayer.control_worldmap = true
 	ManagerPlayer.control_level = false
 	ManagerPlayer.controlable = false
@@ -30,6 +31,8 @@ func _process(_delta: float) -> void:
 	if ManagerPlayer.dice1 != 0:
 		ManagerPlayer.dice1 = 0
 
+	if LevelCheckManager.home == true:
+		$demi_point_home.play("checked")
 	if LevelCheckManager.un_moins_un == true:
 		$"point_1-1".play("checked")
 	if LevelCheckManager.pique == true:

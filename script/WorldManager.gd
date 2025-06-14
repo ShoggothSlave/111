@@ -12,6 +12,7 @@ var un_1_egg = true
 var un_2_egg = true
 var un_3_egg = true
 var un_dunjeon_egg = true
+var pique_egg = true
 
 var coeur1 = true
 var coeur2 = true
