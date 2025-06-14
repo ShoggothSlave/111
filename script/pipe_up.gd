@@ -26,6 +26,7 @@ func _on_area_2d_body_exited(_body: Node2D) -> void:
 		collide = false
 
 func _on_warp_timer_timeout() -> void:
+	LevelCheckManager.home = true
 	ManagerPlayer.controlable = false
 	LevelCheckManager.worldmap_pause = false
 	get_tree().change_scene_to_file("res://levels/worldmap.tscn")

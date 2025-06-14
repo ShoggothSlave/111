@@ -106,6 +106,7 @@ func _process(_delta: float) -> void:
 				hero_sprite.play("dive_side")
 
 	if home == true:
+		$"../demi_point_home".play("checked")
 		if LevelCheckManager.home == true:
 			if Input.is_action_just_pressed("interact"):
 				get_tree().change_scene_to_file("res://levels/level_1_intro.tscn")
@@ -122,6 +123,8 @@ func _process(_delta: float) -> void:
 		if Input.is_action_just_pressed("right"):
 			destination_marker = $"../demi_point_home/home_mark"
 	if pique == true:
+		if Input.is_action_just_pressed("interact"):
+			get_tree().change_scene_to_file("res://levels/level_pique.tscn")
 		if Input.is_action_just_pressed("down"):
 			destination_marker = $"../point_1-1/1-1_mark"
 	if un_1 == true:

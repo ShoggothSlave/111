@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=4 uid="uid://dmka4ced8kgr8"]
+[gd_scene load_steps=110 format=4 uid="uid://dmka4ced8kgr8"]
 
 [ext_resource type="Texture2D" uid="uid://dxy8xvoqrrwpp" path="res://assets/sprites/worldmap_part1.png" id="1_eqcue"]
 [ext_resource type="Texture2D" uid="uid://ct6iw5ortahns" path="res://assets/sprites/worldmap_sea.png" id="1_fns58"]
@@ -719,6 +719,33 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_grfm2"]
+atlas = ExtResource("4_bvepn")
+region = Rect2(15, 15, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ke1n"]
+atlas = ExtResource("4_bvepn")
+region = Rect2(0, 15, 15, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vvjao"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grfm2")
+}],
+"loop": true,
+"name": &"checked",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ke1n")
+}],
+"loop": true,
+"name": &"unchecked",
+"speed": 5.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_cliir"]
 radius = 7.0
 
@@ -1041,12 +1068,11 @@ sprite_frames = SubResource("SpriteFrames_mscyy")
 animation = &"fume"
 autoplay = "fume"
 
-[node name="demi_point_home" type="Sprite2D" parent="."]
+[node name="demi_point_home" type="AnimatedSprite2D" parent="."]
 position = Vector2(221, 506)
-texture = ExtResource("4_bvepn")
-hframes = 4
-vframes = 3
-frame = 5
+sprite_frames = SubResource("SpriteFrames_vvjao")
+animation = &"unchecked"
+autoplay = "unchecked"
 
 [node name="home_mark" type="Marker2D" parent="demi_point_home"]
 

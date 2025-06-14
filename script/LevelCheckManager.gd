@@ -1,7 +1,7 @@
 extends Node
 
 var worldmap_pause = false
-var home = true
+var home = false
 var un_moins_un = false
 var pique = false
 var un_1 = false
