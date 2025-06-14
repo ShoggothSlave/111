@@ -6,7 +6,7 @@ func _ready() -> void:
 	ManagerPlayer.control_worldmap = false
 	ManagerPlayer.control_level = true
 	LevelCheckManager.worldmap_pause = true
-	ManagerPlayer.temps = 200
+	ManagerPlayer.temps = 261
 
 func _process(_delta: float) -> void:
 	ManagerPlayer.hud_time = true
